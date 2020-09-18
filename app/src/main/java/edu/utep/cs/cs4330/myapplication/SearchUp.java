@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -42,8 +43,10 @@ public class SearchUp extends AppCompatActivity {
 
         Button proceedButton = findViewById(R.id.proceedButton);
         proceedButton.setOnClickListener(v -> {
+            Log.d("THIS: ", type.tbm);
+            Log.d("Search: ", text);
             Intent i = new Intent(android.content.Intent.ACTION_VIEW,
-                    Uri.parse("https://www.google.com/serch?tbm="+type.tbm+"&q="+ text));
+                    Uri.parse("http://www.google.com/search?&tbm="+ type.tbm +"&q="+ text));
             startActivity(i);
         });
 
